@@ -23,6 +23,7 @@
             font-size: 2rem; /* Smaller font size for mobile */
             margin-bottom: 10px;
             color: #D2B48C; /* Tan color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect behind the text */
         }
         .subtitle {
             text-align: center;
@@ -63,18 +64,19 @@
         }
         .table-container {
             background-color: #1A1F1C; /* Darker tint of green */
-            padding: 10px; /* Reduced padding by 50% (from 20px to 10px) */
+            padding: 22px 8px; /* Increased top and bottom padding by 35% (from 16px to 22px), decreased side padding by 20% (from 10px to 8px) */
             border-radius: 10px; /* Rounded corners */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* More visible shadow */
             text-align: center; /* Center-align the table */
         }
         table {
             width: 100%;
-            border-collapse: collapse;
+            border-spacing: 0; /* Replace border-collapse with border-spacing */
             overflow-x: auto; /* Enable horizontal scrolling on small screens */
-            display: block; /* Make table scrollable */
-            border-radius: 10px; /* Rounded corners for table */
+            display: table; /* Ensure proper table behavior */
             margin: 0 auto; /* Center the table horizontally */
+            border-radius: 10px; /* Rounded corners for table */
+            border: 1px solid black; /* Thin black outline around the table */
         }
         th, td {
             padding: 4.86px; /* Reduced padding by 10% (from 5.4px to 4.86px) */
@@ -91,6 +93,10 @@
         }
         th:first-child {
             text-align: left; /* Left-align the "Product" header */
+            border-top-left-radius: 10px; /* Rounded top-left corner */
+        }
+        th:last-child {
+            border-top-right-radius: 10px; /* Rounded top-right corner */
         }
         th:not(:first-child) {
             text-align: center; /* Center-align all other headers */
