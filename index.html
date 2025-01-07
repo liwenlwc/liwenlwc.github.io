@@ -285,6 +285,10 @@
         }
 
         function sendOrderAsEmail() {
+            // Get the current date and time
+            const now = new Date();
+            const formattedDateTime = now.toLocaleString(); // Format the date and time
+
             // Create the email body as a simple list, excluding products with order qty = 0
             let emailBody = "Here is the LWC Order List:\n\n";
 
@@ -299,7 +303,7 @@
             emailBody += "\n\nThank you!";
 
             // Encode the subject and body for the mailto link
-            const subject = encodeURIComponent("LWC Order List");
+            const subject = encodeURIComponent(`LWC Order List - ${formattedDateTime}`);
             const body = encodeURIComponent(emailBody);
 
             // Create the mailto link
